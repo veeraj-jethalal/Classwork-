@@ -10,3 +10,4 @@ public class ProceduralExample {
 		System.out.println("Hi my name is" + names[2] + "and I am a" + names[2]);
 	}
 }
+//
