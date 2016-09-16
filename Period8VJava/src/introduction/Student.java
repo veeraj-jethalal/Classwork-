@@ -2,7 +2,7 @@ package introduction;
 
 public class Student {
 	
-	//these are the fields
+	//this is a field
 	private String name;
 	
 	//this is a constructor (initialize fields)
@@ -11,6 +11,6 @@ public class Student {
 	}
 	
 	public void talk(){
-		System.out.println("Hello, my name is" + name);
+		System.out.println("Hello, my name is " + name);
 	}
 }
