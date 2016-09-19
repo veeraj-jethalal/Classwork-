@@ -13,4 +13,4 @@ public class OOP {
 		Student jordan = new Sophomore("Jordan");
 		jordan.talk();
 	} 
-}
+} 
