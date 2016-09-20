@@ -13,6 +13,11 @@ public class DataTypes {
 		System.out.println("d3 : " + d3);  
 		System.out.println("d1 - d2 : " + (d1 - d2));*/
 		
+		String ten = "10";
+		String two = "2";
+		if (ten.compareTo(two)>0) System.out.println("10 is greater than two");
+		else System.out.print("10 is not greater than two");
+		
 		//1 cannot convert from string to int
 		//String s = 1;
 		//System.out.println(s);
@@ -51,8 +56,8 @@ public class DataTypes {
 		//System.out.println("m/n is "+(m/n));
 		
 		//10 prints "m/n is 3.142857142857143"
-		int m = 22;
-		int n = 7;
-		System.out.println("m/n is "+((double)m/n));
-	}
+		//int m = 22;
+		//int n = 7;
+		//System.out.println("m/n is "+((double)m/n));
+		}
 }
