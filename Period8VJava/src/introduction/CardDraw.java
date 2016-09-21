@@ -10,7 +10,6 @@ public class CardDraw {
 		
 		int card2 = (int) (Math.random() * suits.length);
 		
-		String name = ("You just picked the " + values[card] + " of " + suits[card2]);
-		System.out.println(name);
+		System.out.println("You just picked the " + values[card] + " of " + suits[card2]);
 	}
 }
