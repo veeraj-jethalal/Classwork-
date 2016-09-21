@@ -6,9 +6,9 @@ public class CardDraw {
 		String[] values = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", 
 						   "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
 		String[] suits = {"Spades", "Hearts", "Clubs", "Diamonds"};
-		int card = (int) (Math.random() *  values.length) + 0;
+		int card = (int) (Math.random() *  values.length);
 		
-		int card2 = (int) (Math.random() * suits.length) + 0;
+		int card2 = (int) (Math.random() * suits.length);
 		
 		String name = ("You just picked the " + values[card] + " of " + suits[card2]);
 		System.out.println(name);
