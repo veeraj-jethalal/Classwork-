@@ -125,9 +125,9 @@ public class StringPractice {
 		}
 		
 		System.out.println(printString);
-	}*/
+	}
 	
-	/*private static String getCut(String s, int cutoff, int cut){
+	private static String getCut(String s, int cutoff, int cut){
 		int cutIndex = cut * cutoff;
 		if (cutIndex > s.length()){
 			cutIndex = s.length();
