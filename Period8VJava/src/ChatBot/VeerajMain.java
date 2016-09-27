@@ -23,9 +23,7 @@ public class VeerajMain {
 	public static void promptName(){
 		print("Enter your name");
 		user = input.nextLine();
-		print("Glad to meet you, " + user + "! Your name is " + user 
-				+ ". For the rest of the time, I will always call"
-				+ " you " + user);
+		print("Glad to meet you, " + user);
 	}
 		
 	public static void promptForever() {
@@ -37,7 +35,7 @@ public class VeerajMain {
 				print("That's wonderful. So glad you feel good!");
 			}
 			
-			else if(response.indexOf("school") >+ 0){
+			else if(response.indexOf("school") >= 0){
 				print("School is great! Tell me about school.");
 				//exit this while loop
 				inMainLoop = false;
@@ -57,9 +55,13 @@ public class VeerajMain {
 		searchString = searchString.toLowerCase();
 		keyword = keyword.toLowerCase();
 		
+		System.out.println("The phrase is " + searchString);
+		System.out.println("The keyword is " + keyword);
+		
 		//find first position of keyword
 		int psn = searchString.indexOf(0);
 		//keep searching until context keyword found
+		System.out.println("The keyword was found at " + psn);
 		while(psn >= 0){
 			//assume preceded and followed by space
 			String before = " ";
@@ -67,19 +69,24 @@ public class VeerajMain {
 			//check character in front, if it exists
 			if(psn > 0){
 				before = searchString.substring(psn - 1, psn);
+				System.out.println("The character before is " + before);
 			}
 			//check if there is a character after the keyword
 			if(psn + keyword.length() < searchString.length()){
 				after = searchString.substring(psn + keyword.length(),
 						psn + keyword.length() + 1);
+				System.out.println("The character after is " + after);
 			}
-			if(before.compareTo("a") < 0 && after.compareTo("a") < 0){
+			if(before.compareTo("a") < 0 && after.compareTo("a") < 0
+					&& noNegations(searchString, psn)){
+				System.out.println("Found " + keyword + " at " + psn);
 				return psn;
 			}
 			else{
 				//psn + 1 is one space after our current 
 				//psn, so this finds the NEXT word
 				psn = searchString.indexOf(keyword, psn + 1);
+				System.out.println("Did not find " + keyword + ", checking position " + psn);
 			}
 		}
 		return -1;
@@ -150,6 +157,44 @@ public class VeerajMain {
 		 System.out.print(printString);
 		 }
 
+/**
+ * This is a HELPER METHOD. A helper method is a method
+ * designed for "helping" a larger method. Because of
+ * this, helper methods are generally private because
+ * they are only used by the methods they are helping.
+ * @param searchString
+ * @param psn
+ * @return "true" if there is no negation words in front of psn
+ */
+	
+	private static boolean noNegations(String searchString, int psn){
+		/**Check to see if the word "no " is in front of psn
+		 * Check to see if there are 3 spaces in front
+		 * then check to see if "no " is there */
+		if(psn - 3 >= 0 && searchString.substring(psn - 3, psn).equals("no ")){
+			return false;
+		}
+		
+		//check for "not "
+		
+		if(psn - 4 >= 0 && searchString.substring(psn - 4, psn).equals("not ")){
+			return false;
+		}
+		
+		if(psn - 6 >= 0 && searchString.substring(psn - 6, psn).equals("never ")){
+			return false;
+		}
+		
+		if(psn - 6 >= 0 && searchString.substring(psn - 6, psn).equals("never ")){
+			return false;
+		}
+		
+		if(psn - 4 >= 0 && searchString.substring(psn - 4, psn).equals("n't ")){
+			return false;
+		}
+		
+		return true;
+	}
 	/*public static void print(String s){
 		String printString = s;
 		int cutoff = 35;
