@@ -18,4 +18,11 @@ public class VeerajSchool extends Object implements chatBot{
 			VeerajMain.print("That's my favorite part about school!");
 		}
 	}
+
+	public boolean isTriggered(String userInput) {
+		if(VeerajMain.findKeyword(userInput,  "school", 0) >= 0) return true;
+		if(VeerajMain.findKeyword(userInput,  "class", 0) >= 0) return true;
+		if(VeerajMain.findKeyword(userInput,  "teacher", 0) >= 0) return true;
+		else return false;
+	}
 }
