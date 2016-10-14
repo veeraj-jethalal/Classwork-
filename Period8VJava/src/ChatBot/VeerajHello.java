@@ -4,7 +4,7 @@ public class VeerajHello implements chatBot{
 	
 	private String helloResponse;
 	private boolean inHelloLoop;
-	//a
+	
 	private String[] calmResponses = 
 		{"We already said hello. Let's move the conversation along",
 		"You said hello already. Did you forget?"};
