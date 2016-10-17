@@ -1,10 +1,60 @@
 package arrays;
 
+//primitive type arrays vs object arrays
+//primitive types are already in the system and start as 0
+//you cannot mix types in primitive type arrays
+
+//object arrays start as null unless initialized
+//different types of objects in an array of a common super class
+
 public class ArraysPractice {
 	
 	static boolean[] boos3;
 	
 	public static void main(String[] args){
+		//how to time a process?
+		long currentTime = System.currentTimeMillis();
+		
+		int x = 10;
+		increase(x);
+		System.out.println(x);
+		
+		String[] someStrings = new String[1000];
+		standardPopulate(someStrings);
+		String s = someStrings[999];
+		makeSpecial(s);
+		print(someStrings);
+		
+		initializingArraysExample();
+		long endTime = System.currentTimeMillis();
+		System.out.println("The process took " + (endTime - currentTime) + 
+				" milliseconds.");
+	}
+	
+	private static void increase(int i){
+		i++;
+	}
+	
+	private static void makeSpecial(String s) {
+		s = "THIS STRING IS SPECIAL";
+	}
+
+	private static void print(String[] s) {
+		for(int i = 0; i < s.length; i++){
+			System.out.println(s[i]);
+		}
+		
+	}
+
+	private static void standardPopulate(String[] s) {
+		for(int i = 0; i < s.length; i++){
+			String string = "String #" + (i+1);
+			s[i] = string;
+		}
+	}
+
+	// stuff from Monday
+	public static void initializingArraysExample(){
 		/*In Java, arrays have a fixed length
 		 * Indices start at 0
 		 * They are indexed(ordered)
