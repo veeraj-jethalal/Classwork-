@@ -4,6 +4,7 @@ public class ArrayMethods {
 
     public static void main(String[] args) {
     
+    	
      /**
       * IMPORTANT NOTE: 
       * This homework assignment will be weighted 4x.
@@ -15,6 +16,13 @@ public class ArrayMethods {
     }
     
     public static int searchUnsorted(int[] arrayToSearch, int key){
+    
+    	for(int i = 0; i < arrayToSearch.length; i++){
+    		if(arrayToSearch[i] == key){
+    			System.out.println("The key was found at " + i);
+    			break;
+    		}
+    	}
     /**
      * this method take an unsorted int array (arrayToSearch) and returns an 
      * int corresponding to the index of a key, if it is in the array
