@@ -11,10 +11,10 @@ public class ArraysPractice2 {
 		//randomize(fiftyNumbers);
 		//print(fiftyNumbers);
 		
-		rollDice(fiftyNumbers, 2);
+		rollDice(fiftyNumbers, 4);
 		//print(fiftyNumbers);
 		//count each die roll and provide a percentage
-		countResult(fiftyNumbers, 2);
+		countResult(fiftyNumbers, 4);
 		
 		long endTime = System.currentTimeMillis();
 		System.out.println("The process took " + (endTime - currentTime) + 
@@ -45,12 +45,14 @@ public class ArraysPractice2 {
 			int dice = 0;
 			for(int j = 0; j < numberOfDice; j++){
 				dice = dice + (int) (1 + (Math.random() * 6));
+				array[i] = dice;
 			}
 		}
 	}
 	
 	private static void countResult(int[] array, int numberOfDice){
-		int[] counter = new int[numberOfDice * 6];
+		System.out.println("CountResult Method");
+		int[] counter = new int[numberOfDice*6];
 		for(int n: array){
 			counter[n -1] = counter[n - 1] + 1;
 		}
