@@ -3,7 +3,9 @@ package arrays;
 public class ArrayMethods {
 
     public static void main(String[] args) {
-    
+    	
+    	int[] array = {100, 90, 80, 50, 60, 50, 40, 30, 20, 10, 0};
+    	isSorted(array);
     	
      /**
       * IMPORTANT NOTE: 
@@ -19,10 +21,10 @@ public class ArrayMethods {
     
     	for(int i = 0; i < arrayToSearch.length; i++){
     		if(arrayToSearch[i] == key){
-    			System.out.println("The key was found at " + i);
-    			break;
+    			return i;
     		}
     	}
+    	
     /**
      * this method take an unsorted int array (arrayToSearch) and returns an 
      * int corresponding to the index of a key, if it is in the array
@@ -39,6 +41,14 @@ public class ArrayMethods {
      * 
      * Note: You should attempt to write a method that is more efficient that searchUnsorted
      * */
+    	for(int i = 0; i < sortedArrayToSearch.length; i++){
+    		while(sortedArrayToSearch[i] > key){
+    			i++;
+    		}
+    		if(sortedArrayToSearch[i] == key){
+    			return i;
+    		}
+    	}
      return -1;
     }
     
@@ -46,7 +56,12 @@ public class ArrayMethods {
         /**
          * This method takes an in array as a parameter and returns 'true' if the array is already sorted in DESCENDING order
          * */
-        return false;
+    	for (int i = 0; i < array.length - 1; i++) {
+    		if (array[i] < array[i+1]) {
+    	        return false;
+    	    }
+        }
+    	return true;
     }
     
     
