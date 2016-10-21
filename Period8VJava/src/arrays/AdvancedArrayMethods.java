@@ -4,9 +4,13 @@ public class AdvancedArrayMethods {
 	
 	public static void main(String[] args){
 		String[] array = {"a", "b", "c", "d", "e", "f", "g", "h"};
-		swap(array, 0, (array.length - 1));
+		shuffle(array);
 	}
 	
+	private static void shuffle(Object[] array) {
+		
+	}
+
 	public static void swap(String[] arr, int a, int b){
 		String placeholder = arr[b];
 		arr[b] = arr[b];
