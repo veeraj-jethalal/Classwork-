@@ -4,8 +4,8 @@ public class ArrayMethods {
 
     public static void main(String[] args) {
     	
-    	int[] array = {100, 90, 80, 50, 60, 50, 40, 30, 20, 10, 0};
-    	isSorted(array);
+    	double[] test = {10.0, 2.0, 5.0, 3.0};
+    	getStats(test);
     	
      /**
       * IMPORTANT NOTE: 
@@ -66,7 +66,23 @@ public class ArrayMethods {
     
     
     public static double[] getStats(double[] array){
-        /** 
+        
+    	double mean = 0;
+    	double max = 0;
+    	double min = 0;
+    	double median = 0;
+    	
+    	for(int i = 0; i < array.length; i++){
+    		mean = mean + array[i];
+        }
+    	
+    	mean = mean / (array.length);
+    	
+    	for(int i = 0; i < array.length; i++){
+    		
+    	}
+    	
+    	/** 
          * This method return a double[] contain a WHOLE BUNCH of stats
          * The double array must keep the following stats about the array parameter:
          * index 0 = the mean
