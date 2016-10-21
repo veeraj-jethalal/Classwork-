@@ -88,7 +88,7 @@ public class ArrayMethods {
          * index 0 = the mean
          * index 1 = the max
          * index 2 = the min
-         * index 3 = the median
+         * index 3 = the mediand
          * index 4 = the number of values greater than or equal to the mean
          * index 5 = the number of values below the mean
          * */
