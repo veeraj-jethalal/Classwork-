@@ -4,8 +4,8 @@ public class ArrayMethods {
 
     public static void main(String[] args) {
     	
-    	int[] array = {100, 90, 80, 50, 60, 50, 40, 30, 20, 10, 0};
-    	isSorted(array);
+    	double[] array = {9.0, 9.0, 800.0, 5432.0, 60.0};
+    	getStats(array);
     	
      /**
       * IMPORTANT NOTE: 
@@ -66,7 +66,44 @@ public class ArrayMethods {
     
     
     public static double[] getStats(double[] array){
-        /** 
+        
+    	double mean = 0;
+    	double max = 0;
+    	double min = 0;
+    	double median = 0;
+    	double greater = 0;
+    	double lesser = 0;
+    	
+    	//get mean
+    	for(int i = 0; i < array.length; i++){
+    		mean = mean + array[i];
+    	}
+    	mean = mean/array.length;
+    	
+    	//get max
+    	for(int i = 0; i < array.length; i++){
+    		max = array[i];
+    		for(int j = 0; j < array.length; j++){
+    			if(array[j] >= max){
+    				max = array[j];
+    			}
+    		}
+    	}
+    	
+    	//get min
+    	for(int i = 0; i < array.length; i++){
+    		min = array[i];
+    		for(int j = 0; j < array.length; j++){
+    			if(array[j] <= min){
+    				min = array[j];
+    			}
+    		}
+    	}
+    	
+    	//get median
+    	
+    	
+    	/** 
          * This method return a double[] contain a WHOLE BUNCH of stats
          * The double array must keep the following stats about the array parameter:
          * index 0 = the mean
@@ -81,7 +118,17 @@ public class ArrayMethods {
     }
     
     public static void reverseOrder(int[] array){
-        /**
+        
+    	int[] reversed = new int[array.length];
+    	
+    	for(int i = array.length; i > 0; i--){
+    		int temp = array[i];
+    		for(int j = 0; j < array.length; j ++){
+    			
+    		}
+    	}
+    	
+    	/**
          * this method reverses the order of the array passed to it.
          * Not that this method does not have a return type. You do not need to copy the array first
          * Furthermore, note that the array is not necessarily in any *particular* order. It may be 
