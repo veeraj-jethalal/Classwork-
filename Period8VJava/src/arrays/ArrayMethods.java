@@ -239,7 +239,6 @@ public class ArrayMethods {
 	
 	public static void swap(int[] arr, int a, int b){
 		int placeholder = arr[a];
-		System.out.println(placeholder);
 		arr[a] = arr[b];
 		arr[b] = placeholder;
 	}
