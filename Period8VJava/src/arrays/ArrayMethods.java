@@ -6,9 +6,11 @@ public class ArrayMethods {
 
     public static void main(String[] args) {
     	
-    	int[] array = {1, 2, 3, 4, 5};
-    	cycleOnce(array);
-    	System.out.println(Arrays.toString(array));
+    	double[] array = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
+    	sortArray(array);
+    	
+    	//System.out.println(Arrays.toString(array));
+    	getStats(array);
     	
      /**
       * IMPORTANT NOTE: 
@@ -60,8 +62,8 @@ public class ArrayMethods {
          * This method takes an in array as a parameter and returns 'true' if the array is already sorted in DESCENDING order
          * */
     	for (int i = 0; i < array.length - 1; i++) {
-    		if (array[i] < array[i+1]) {
-    	        return false;
+    		if (array[i] > array[i+1]) {
+    			return false;
     	    }
         }
     	return true;
@@ -104,7 +106,21 @@ public class ArrayMethods {
     	}
     	
     	//get median
+    	boolean sorted;
+    	for (int i = 0; i < array.length - 1; i++) {
+    		if (array[i] > array[i+1]) {
+    			sorted = false;
+    	    }
+        }
+    	sorted = true;
     	
+    	if(sorted){
+    		medianHelper(array);
+    	}
+    	if(!sorted){
+    		sortArray(array);
+    		medianHelper(array);
+    	}
     	
     	/** 
          * This method return a double[] contain a WHOLE BUNCH of stats
@@ -119,6 +135,20 @@ public class ArrayMethods {
          double[] stats = new double[6];
          return stats;
     }
+	
+    public static void medianHelper(double[] array){
+    	if((array.length) % 2 == 1){
+			System.out.println(array[(int) ((array.length/2)+0.5)]);
+		}
+		if((array.length) % 2 == 0){
+			double temp = (array.length) / 2;
+			double lower = (temp - 1);
+			double upper = (temp + 1);
+			lower = array[(int) lower];
+			upper = array[(int) upper];
+			System.out.println((lower + upper) / 2);
+		}
+    }		
     
     public static void reverseOrder(int[] array){
         
@@ -175,7 +205,21 @@ public class ArrayMethods {
     }
 
     public static int longestSharedSequence(int[] array1, int[] array2){
-        /**This method counts the longest unbroken, shared sequence in TWO arrays.
+        int max = 0;
+        int count = 0;
+  
+    	for(int seqStart = 0; seqStart < array1.length; seqStart++){
+    		int seqEnd = seqStart;
+    		int[] seq = getSequence(seqStart, seqEnd, array1);
+    		if(checkSequence(seq, array2)){
+    			count ++;
+    			if(count > max){
+    				max = count;
+    			}
+    		}
+    		count = 0;
+    	}
+    	/**This method counts the longest unbroken, shared sequence in TWO arrays.
          * The sequence does NOT have to be a consecutive sequence
          * It does NOT matter where the sequence begins, the arrays might not be the same length
          * 
@@ -186,10 +230,20 @@ public class ArrayMethods {
          * longestSequence({9,6,1,4,3,6,7,9}, {9,6,5,8,3,6,7,0}) returns '3', since the sequence '3,6,7' is in both arrays and is 3 integers long
          * */
         
-        return 0;
+        return max;
     }
 
-    public static int[] generateDistinctItemsList(int n){
+    private static boolean checkSequence(int[] seq, int[] array2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static int[] generateDistinctItemsList(int n){
         /**
          * This method needs to generate an int[] of length n that contains distinct, random integers
          * between 1 and 2n 
@@ -243,6 +297,23 @@ public class ArrayMethods {
 		arr[b] = placeholder;
 	}
 	
+	public static void sortArray(double[] array) {
+	    boolean swapped = true;
+	    int j = 0;
+	    double temp;
+	    while (swapped) {
+	        swapped = false;
+	        j++;
+	        for (int i = 0; i < array.length - j; i++) {
+	            if (array[i] > array[i + 1]) {
+	                temp = array[i];
+	                array[i] = array[i + 1];
+	                array[i + 1] = temp;
+	                swapped = true;
+	            }
+	        }
+	    }
+	}
 	/*sorting array
 	 * while(!isSorted(arr)){
 	 * if(arr[0] > arr[1])
