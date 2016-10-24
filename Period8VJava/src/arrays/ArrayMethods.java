@@ -1,11 +1,14 @@
 package arrays;
 
+import java.util.Arrays;
+
 public class ArrayMethods {
 
     public static void main(String[] args) {
     	
-    	double[] array = {9.0, 9.0, 800.0, 5432.0, 60.0};
-    	getStats(array);
+    	int[] array = {1, 2, 3, 4, 5};
+    	cycleOnce(array);
+    	System.out.println(Arrays.toString(array));
     	
      /**
       * IMPORTANT NOTE: 
@@ -199,6 +202,11 @@ public class ArrayMethods {
     
     
     public static void cycleThrough(int[] array, int n){
+    	while(n > 0)
+    	{
+    		n--;
+    		cycleOnce(array);
+    	}
         /** This problem represents people moving through a line.
          * Once they get to the front of the line, they get what they've been waiting for, then they 
          * immediately go to the end of the line and "cycle through" again.
@@ -222,7 +230,25 @@ public class ArrayMethods {
          * For extra credit, make your method handle NEGATIVE n
          * */
     }
-    
 
+	private static void cycleOnce(int[] array) {
+		for(int i = array.length; i < 0; i--){
+			swap(array, 0, i);
+		}
+	}
+	
+	public static void swap(int[] arr, int a, int b){
+		int placeholder = arr[a];
+		System.out.println(placeholder);
+		arr[a] = arr[b];
+		arr[b] = placeholder;
+	}
+	
+	/*sorting array
+	 * while(!isSorted(arr)){
+	 * if(arr[0] > arr[1])
+	 * swap(arr, 0, 1);
+	 * }
+	 */
 }
 
