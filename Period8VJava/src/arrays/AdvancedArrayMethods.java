@@ -8,11 +8,14 @@ public class AdvancedArrayMethods {
 	}
 	
 	private static void shuffle(Object[] array) {
-		
+		for(int i = 0; i < array.length; i++){
+			int random = (int)(Math.random()*6);
+			swap(array, i, random);
+		}
 	}
 
-	public static void swap(String[] arr, int a, int b){
-		String placeholder = arr[b];
+	public static void swap(Object[] arr, int a, int b){
+		Object placeholder = arr[b];
 		arr[b] = arr[b];
 		arr[a] = placeholder;
 	}
