@@ -6,11 +6,11 @@ public class ArrayMethods {
 
     public static void main(String[] args) {
     	
-    	double[] array = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
-    	sortArray(array);
+    	int[] array = {10, 11, 12, 13, 14, 15, 16};
+    	reverseOrder(array);
     	
     	//System.out.println(Arrays.toString(array));
-    	getStats(array);
+    	//getStats(array);
     	
      /**
       * IMPORTANT NOTE: 
@@ -85,6 +85,19 @@ public class ArrayMethods {
     	}
     	mean = mean/array.length;
     	
+    	//values greater than mean
+    	for(int i = 0; i < array.length; i++){
+    		if(array[i] >= mean){
+    			greater++;
+    		}
+    	}
+    	
+    	//values less than mean
+    	for(int i = 0; i < array.length; i++){
+    		if(array[i] < mean){
+    			lesser++;
+    		}
+    	}
     	//get max
     	for(int i = 0; i < array.length; i++){
     		max = array[i];
@@ -115,11 +128,34 @@ public class ArrayMethods {
     	sorted = true;
     	
     	if(sorted){
-    		medianHelper(array);
+    		if((array.length) % 2 == 1){
+    			median = array[(int) ((array.length/2)+0.5)];
+    			System.out.println(median);
+    		}
+    		if((array.length) % 2 == 0){
+    			double temp = (array.length) / 2;
+    			double lower = (temp - 1);
+    			temp = array[(int) temp];
+    			lower = array[(int) lower];
+    			median = (lower + temp) / 2;
+    			System.out.println(median);
+    		}
     	}
+    	
     	if(!sorted){
     		sortArray(array);
-    		medianHelper(array);
+    		if((array.length) % 2 == 1){
+    			median = (array[(int) ((array.length/2)+0.5)]);
+    			System.out.println(array[(int) ((array.length/2)+0.5)]);
+    		}
+    		if((array.length) % 2 == 0){
+    			double temp = (array.length) / 2;
+    			double lower = (temp - 1);
+    			temp = array[(int) temp];
+    			lower = array[(int) lower];
+    			median = (lower + temp) / 2;
+    			System.out.println((lower + temp) / 2);
+    		}
     	}
     	
     	/** 
@@ -132,33 +168,23 @@ public class ArrayMethods {
          * index 4 = the number of values greater than or equal to the mean
          * index 5 = the number of values below the mean
          * */
-         double[] stats = new double[6];
+         double[] stats = {mean, max, min, median, greater, lesser};
+         System.out.println(Arrays.toString(array));
+         System.out.println(Arrays.toString(stats));
          return stats;
-    }
-	
-    public static void medianHelper(double[] array){
-    	if((array.length) % 2 == 1){
-			System.out.println(array[(int) ((array.length/2)+0.5)]);
-		}
-		if((array.length) % 2 == 0){
-			double temp = (array.length) / 2;
-			double lower = (temp - 1);
-			double upper = (temp + 1);
-			lower = array[(int) lower];
-			upper = array[(int) upper];
-			System.out.println((lower + upper) / 2);
-		}
-    }		
+    }	
     
     public static void reverseOrder(int[] array){
         
-    	int[] reversed = new int[array.length];
-    	
-    	for(int i = array.length; i > 0; i--){
-    		int temp = array[i];
-    		for(int j = 0; j < array.length; j ++){
-    			
-    		}
+    	int temp;
+
+    	for (int i = 0; i < (array.length)/2; i++)
+    	  {
+    	     temp = array[i];
+    	     array[i] = array[(array.length - 1) - i];
+    	     array[(array.length - 1) - i] = temp;
+    	  }
+    	System.out.println(Arrays.toString(array));
     	}
     	
     	/**
@@ -173,7 +199,7 @@ public class ArrayMethods {
          * array = {-6, 16, 10, 9, 1, 5}
          * 
          * */
-    }
+    
     
     public static int countDifferences(int[] array1, int[] array2){
         /**Here, you will write an method that returns the number of values in two arrays 
