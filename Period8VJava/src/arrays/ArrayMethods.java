@@ -6,8 +6,18 @@ public class ArrayMethods {
 
     public static void main(String[] args) {
     	
-    	int[] array = {10, 11, 12, 13, 14, 15, 16};
-    	reverseOrder(array);
+    	/*double[] array = {(double)(int)(Math.random()*500), 
+    			(double)(int)(Math.random()*500), 
+    			(double)(int)(Math.random()*500), 
+    			(double)(int)(Math.random()*500), 
+    			(double)(int)(Math.random()*500), 
+    			(double)(int)(Math.random()*500), 
+    			(double)(int)(Math.random()*500)};
+    	getStats(array);*/
+    	
+    	int[] array1 = {1, 2, 3, 4, 5, 6};
+    	int[] array2 = {1, 2, 5, 4, 1, 6};
+    	countDifferences(array1, array2);
     	
     	//System.out.println(Arrays.toString(array));
     	//getStats(array);
@@ -22,6 +32,7 @@ public class ArrayMethods {
       * */
     }
     
+    //DONE
     public static int searchUnsorted(int[] arrayToSearch, int key){
     
     	for(int i = 0; i < arrayToSearch.length; i++){
@@ -38,6 +49,7 @@ public class ArrayMethods {
      return -1;
     }
     
+    //DONE
     public static int searchSorted(int[] sortedArrayToSearch, int key){
     /**
      * this method is exactly like the one above, except the parameter sortedArrayToSearch will
@@ -57,6 +69,7 @@ public class ArrayMethods {
      return -1;
     }
     
+    //DONE
     public static boolean isSorted(int[] array){
         /**
          * This method takes an in array as a parameter and returns 'true' if the array is already sorted in DESCENDING order
@@ -69,7 +82,7 @@ public class ArrayMethods {
     	return true;
     }
     
-    
+    //DONE
     public static double[] getStats(double[] array){
         
     	double mean = 0;
@@ -119,13 +132,12 @@ public class ArrayMethods {
     	}
     	
     	//get median
-    	boolean sorted;
+    	boolean sorted = true;
     	for (int i = 0; i < array.length - 1; i++) {
     		if (array[i] > array[i+1]) {
     			sorted = false;
     	    }
         }
-    	sorted = true;
     	
     	if(sorted){
     		if((array.length) % 2 == 1){
@@ -174,6 +186,7 @@ public class ArrayMethods {
          return stats;
     }	
     
+    //DONE
     public static void reverseOrder(int[] array){
         
     	int temp;
@@ -200,9 +213,15 @@ public class ArrayMethods {
          * 
          * */
     
-    
+    //DONE
     public static int countDifferences(int[] array1, int[] array2){
-        /**Here, you will write an method that returns the number of values in two arrays 
+    	int counter = 0;
+    	for(int i = 0; i < array1.length; i++){
+    		if(array1[i] != array2[i]){
+    			counter++;
+    		}
+    	}
+    	/**Here, you will write an method that returns the number of values in two arrays 
          * that are NOT the same (either in value OR location).
          * The arrays ALWAYS have the same length
          * Examples:
@@ -212,12 +231,15 @@ public class ArrayMethods {
          * countDifferences({1,2,3},{1,3,2}) returns 2, since '2' and '3' are both present, but different locations
          * 
          * */
-         return 0;
+    	System.out.println(Arrays.toString(array1));
+    	System.out.println(Arrays.toString(array2));
+    	System.out.println("Number of Differences: " + counter);
+        return counter;
     }
     
 
     public static int longestConsecutiveSequence(int[] array1){
-        /**This method counts the longest consequtive sequence in an array.
+        /**This method counts the longest consecutive sequence in an array.
          * It does not matter where the sequence begins
          * If there are no consecutive numbers, the method should return '1'
          * 
@@ -259,8 +281,18 @@ public class ArrayMethods {
         return max;
     }
 
-    private static boolean checkSequence(int[] seq, int[] array2) {
-		// TODO Auto-generated method stub
+    private static boolean checkSequence(int[] seq, int[] arr) {
+		//i checks every value in arr
+    	for(int i = 0; i < arr.length; i++){
+    		for(int j = 0; j < seq.length; j++){
+    			if(seq[j] != arr[j + i]){
+    				break;
+    			}
+    			else if(j == seq.length - 1){
+    				return true;
+    			}
+    		}
+    	}
 		return false;
 	}
 
@@ -270,7 +302,11 @@ public class ArrayMethods {
 	}
 
 	public static int[] generateDistinctItemsList(int n){
-        /**
+        int[] array = new int[n];
+		for(int i = 0; i < n; i++){
+			
+        }
+		/**
          * This method needs to generate an int[] of length n that contains distinct, random integers
          * between 1 and 2n 
          * The method will be tested by verifying that the array you return is n items long,
