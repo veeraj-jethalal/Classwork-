@@ -255,7 +255,7 @@ public class ArrayMethods {
     public static int longestSharedSequence(int[] array1, int[] array2){
         int max = 0;
         int count = 0;
-  
+        //test
     	for(int seqStart = 0; seqStart < array1.length; seqStart++){
     		int seqEnd = seqStart;
     		int[] seq = getSequence(seqStart, seqEnd, array1);
