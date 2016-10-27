@@ -14,13 +14,16 @@ public class ArrayMethods {
     			(double)(int)(Math.random()*500), 
     			(double)(int)(Math.random()*500)};
     	getStats(array);*/
+    	int[] array = {1, 8, 2, 4, 1, 2, 3, 4, 5};
+    	int[] array2 = {1, 8, 2, 4, 2, 1, 3, 5, 4};
+    	longestSharedSequence(array, array2);
     	
-    	int[] array1 = {1, 2, 3, 4, 5, 6};
-    	int[] array2 = {1, 2, 5, 4, 1, 6};
-    	countDifferences(array1, array2);
-    	
+    	//countDifferences(array1, array2);
+    	//generateDistinctItemsList(10);
     	//System.out.println(Arrays.toString(array));
     	//getStats(array);
+    	
+    
     	
      /**
       * IMPORTANT NOTE: 
@@ -237,8 +240,28 @@ public class ArrayMethods {
         return counter;
     }
     
-
+    //DONE
     public static int longestConsecutiveSequence(int[] array1){
+    	if(array1.length == 1){
+            return 1;
+        }
+    
+        int answer = 0;
+        int counter = 1;
+    
+        for(int i = 0; i < array1.length-1; i++){
+            if(array1[i] + 1 == array1[i+1]){
+                counter++;
+                answer = Math.max(answer, counter);
+            }
+            else if(array1[i] == array1[i+1]){
+                continue;
+            }
+            else{
+                counter = 1;
+            }
+        }
+        return Math.max(answer, counter);
         /**This method counts the longest consecutive sequence in an array.
          * It does not matter where the sequence begins
          * If there are no consecutive numbers, the method should return '1'
@@ -248,25 +271,29 @@ public class ArrayMethods {
          * longestSequence({0,9,10,11,4,3,8,9}) returns '3', since '9,10,11' is 3 integers long
          * longestSequence({0,9,8,11,4,3,7,9}) returns '1', since there are no consecutive integers
          * */
-        
-        return 0;
     }
 
     public static int longestSharedSequence(int[] array1, int[] array2){
-        int max = 0;
-        int count = 0;
-        //test
-    	for(int seqStart = 0; seqStart < array1.length; seqStart++){
-    		int seqEnd = seqStart;
-    		int[] seq = getSequence(seqStart, seqEnd, array1);
-    		if(checkSequence(seq, array2)){
-    			count ++;
-    			if(count > max){
-    				max = count;
-    			}
-    		}
-    		count = 0;
-    	}
+    	int counter = 0;
+        int sequence = 0;
+        for(int i = 0; i < array1.length; i++){
+        	for(int j = 0; j < array2.length; j++){
+        		if((i + counter) < array1.length){
+        			if(array1[i+counter] == array2[j]){
+        				counter++;
+        			}
+        			else{
+        				counter = 0;
+        			}
+        			if(counter > sequence){
+        				sequence = counter;
+        			}
+        		}
+        	} 
+        }
+        System.out.println(sequence);
+        return sequence;
+    
     	/**This method counts the longest unbroken, shared sequence in TWO arrays.
          * The sequence does NOT have to be a consecutive sequence
          * It does NOT matter where the sequence begins, the arrays might not be the same length
@@ -277,35 +304,21 @@ public class ArrayMethods {
          *          since the sequence '9,6,3,4,3' is in both arrays and is 5 integers long, it doesn't matter that the sequence begins at different indices 
          * longestSequence({9,6,1,4,3,6,7,9}, {9,6,5,8,3,6,7,0}) returns '3', since the sequence '3,6,7' is in both arrays and is 3 integers long
          * */
-        
-        return max;
     }
-
-    private static boolean checkSequence(int[] seq, int[] arr) {
-		//i checks every value in arr
-    	for(int i = 0; i < arr.length; i++){
-    		for(int j = 0; j < seq.length; j++){
-    			if(seq[j] != arr[j + i]){
-    				break;
-    			}
-    			else if(j == seq.length - 1){
-    				return true;
-    			}
-    		}
-    	}
-		return false;
-	}
-
-	private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
+	//DONE
 	public static int[] generateDistinctItemsList(int n){
-        int[] array = new int[n];
-		for(int i = 0; i < n; i++){
-			
-        }
+		int[] items = new int[n];
+		A: for (int i = 0; i < n; i++) {
+		    items[i] = (int)(Math.random()* (2 * n) + 1);
+		    B: for (int j = 0; j < i; j++) {
+		        if (items[i] == items[j]) {
+		            i--; 
+		            break B;
+		        }
+		    }  
+		}
+		return items;
 		/**
          * This method needs to generate an int[] of length n that contains distinct, random integers
          * between 1 and 2n 
@@ -313,16 +326,24 @@ public class ArrayMethods {
          * contains only entries between 1 and 2n (inclusive) and has no duplicates
          * 
          * */
-        return null; 
     }
     
+	public static void swap(int a, int b, int[] arr){
+		int placeholder = arr[b];
+		arr[b] = arr[b];
+		arr[a] = placeholder;
+	}
     
-    public static void cycleThrough(int[] array, int n){
-    	while(n > 0)
-    	{
-    		n--;
-    		cycleOnce(array);
-    	}
+	public static void cycleThrough(int[] array, int n){
+		for(int i = 0; i < n; i++){
+			int temp = array[0];
+			for(int j = 0; j < array.length-1; j++){
+				array[j] = array[j+1];
+			}
+			array[array.length-1] = temp;
+		}
+		System.out.println(Arrays.toString(array));
+	}
         /** This problem represents people moving through a line.
          * Once they get to the front of the line, they get what they've been waiting for, then they 
          * immediately go to the end of the line and "cycle through" again.
@@ -345,20 +366,8 @@ public class ArrayMethods {
          * CHALLENGE
          * For extra credit, make your method handle NEGATIVE n
          * */
-    }
+    
 
-	private static void cycleOnce(int[] array) {
-		for(int i = array.length; i < 0; i--){
-			swap(array, 0, i);
-		}
-	}
-	
-	public static void swap(int[] arr, int a, int b){
-		int placeholder = arr[a];
-		arr[a] = arr[b];
-		arr[b] = placeholder;
-	}
-	
 	public static void sortArray(double[] array) {
 	    boolean swapped = true;
 	    int j = 0;
@@ -376,11 +385,5 @@ public class ArrayMethods {
 	        }
 	    }
 	}
-	/*sorting array
-	 * while(!isSorted(arr)){
-	 * if(arr[0] > arr[1])
-	 * swap(arr, 0, 1);
-	 * }
-	 */
 }
 
