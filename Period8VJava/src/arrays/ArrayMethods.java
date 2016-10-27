@@ -274,25 +274,25 @@ public class ArrayMethods {
     }
 
     public static int longestSharedSequence(int[] array1, int[] array2){
-    	int counter = 0;
-        int sequence = 0;
-        for(int i = 0; i < array1.length; i++){
-        	for(int j = 0; j < array2.length; j++){
-        		if((i + counter) < array1.length){
-        			if(array1[i+counter] == array2[j]){
-        				counter++;
-        			}
-        			else{
-        				counter = 0;
-        			}
-        			if(counter > sequence){
-        				sequence = counter;
-        			}
-        		}
-        	} 
-        }
-        System.out.println(sequence);
-        return sequence;
+	    	int counter = 0;
+	        int sequence = 0;
+	        for(int i = 0; i < array1.length; i++){
+	        	for(int j = 0; j < array2.length; j++){
+	        		if((i + counter) < array1.length){
+	        			if(array1[i+counter] == array2[j]){
+	        				counter++;
+	        			}
+	        			else{
+	        				counter = 0;
+	        			}
+	        			if(counter > sequence){
+	        				sequence = counter;
+	        			}
+	        		}
+	        	} 
+	        }
+	        System.out.println(sequence);
+	        return sequence;
     
     	/**This method counts the longest unbroken, shared sequence in TWO arrays.
          * The sequence does NOT have to be a consecutive sequence
