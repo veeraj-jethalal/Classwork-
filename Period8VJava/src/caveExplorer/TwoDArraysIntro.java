@@ -16,7 +16,7 @@ public class TwoDArraysIntro {
 				arr2D[row][col] = "(" + row + ", " + col + ")";
 			}
 			//print the 2D array
-			//Every element in a 2D array is itself an array
+			///Every element in a 2D array is itself an array
 			//A for each loop would look like this:
 			for(String[] row : arr2D){
 				System.out.println(Arrays.toString(row));
