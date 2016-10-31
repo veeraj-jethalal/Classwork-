@@ -1,8 +1,8 @@
 package caveExplorer;
 import java.util.Arrays;
-;
+
 public class TwoDArraysIntro {
-	//a
+	
 	public static void main(String[] args) {
 		String[] xox = {"x", "o", "x", "o", "x"};
 		System.out.println(Arrays.toString(xox));
@@ -12,15 +12,15 @@ public class TwoDArraysIntro {
 		System.out.println("The width is " + arr2D[0].length);
 		for(int row = 0; row < arr2D.length; row++){
 			//populate with coordinates
-			for(int col = 0; col < arr2D.length; col++){
+			for(int col = 0; col < arr2D.length - 1; col++){
 				arr2D[row][col] = "(" + row + ", " + col + ")";
 			}
 			//print the 2D array
 			///Every element in a 2D array is itself an array
 			//A for each loop would look like this:
-			for(String[] row : arr2D){
-				System.out.println(Arrays.toString(row));
-			}
+		}
+		for(String[] row : arr2D){
+			System.out.println(Arrays.toString(row));
 		}
 	}
 }
