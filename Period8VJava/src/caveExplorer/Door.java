@@ -13,7 +13,7 @@ public class Door {
 		description = "door";
 		details = "";
 	}
-
+//
 	public boolean isOpen() {
 		return open;
 	}

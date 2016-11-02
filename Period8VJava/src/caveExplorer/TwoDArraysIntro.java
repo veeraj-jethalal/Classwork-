@@ -23,7 +23,7 @@ public class TwoDArraysIntro {
 		}
 		return field;
 	}
-
+//
 	private static String countNearby(boolean[][] mines, int row, int col) {
 		for(int r = 0; r < row + 1; r++){
 			for(int c = col-1; c < col + 1; c++){
