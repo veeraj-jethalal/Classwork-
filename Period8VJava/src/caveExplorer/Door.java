@@ -13,7 +13,7 @@ public class Door {
 		description = "door";
 		details = "";
 	}
-//
+
 	public boolean isOpen() {
 		return open;
 	}
@@ -26,7 +26,7 @@ public class Door {
 		return locked;
 	}
 
-	public void setLocked(boolean locked) {
+	public void setLocked(boolean locked){
 		this.locked = locked;
 	}
 

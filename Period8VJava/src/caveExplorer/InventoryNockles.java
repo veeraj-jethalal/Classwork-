@@ -9,7 +9,7 @@ public class InventoryNockles {
 		hasMap = true;
 		updateMap();
 	}
-//
+
 	private void updateMap() {
 		CaveRoomPd8[][] caves = CaveExplorer.caves;
 	}

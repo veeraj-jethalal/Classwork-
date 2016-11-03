@@ -25,7 +25,7 @@ public class CaveExplorer {
 		inventory = new InventoryNockles();
 		startExploring();
 	}
-//
+
 	private static void startExploring(){
 		while(true){
 			print(inventory.getDescription());
