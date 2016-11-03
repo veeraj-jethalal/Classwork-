@@ -49,7 +49,7 @@ public class TwoDArraysIntro {
 		//String[][] field = createField(mines);
 		//printPic(field);
 	}
-		
+//		
 	private static void startExploring() {
 		while(true){
 			location[starti][startj] = "X";
