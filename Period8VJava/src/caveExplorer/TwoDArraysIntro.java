@@ -12,39 +12,41 @@ public class TwoDArraysIntro {
 	static int treasurei;
 	static int treasurej;
 	public static void main(String[] args) {
-		arr2D = new String[5][5];
-		location = new String[5][5];
-		for(int row = 0; row < location.length; row++){
-			for(int col = 0; col < location[row].length; col++){
-				location[row][col] = " ";
-			}
-		}
-		for(int row = 0; row < arr2D.length; row++){
-			for(int col = 0; col < arr2D[row].length; col++){
-				arr2D[row][col] = "(" + row + ", " + col + ")";
-			}
-		}
-		starti = 2;
-		startj = 2;
-		treasurei = 4;
-		treasurej = 3;
-		startExploring();
-//		String[][] practice = new String[15][15];
-//		for(int row = 0; row < practice.length; row++){
-//			//populate with coordinates
-//			for(int col = 0; col < practice[row].length; col++){
-//				practice[row][col] = " ";
+//		arr2D = new String[5][5];
+//		location = new String[5][5];
+//		for(int row = 0; row < location.length; row++){
+//			for(int col = 0; col < location[row].length; col++){
+//				location[row][col] = " ";
 //			}
 //		}
+//		for(int row = 0; row < arr2D.length; row++){
+//			for(int col = 0; col < arr2D[row].length; col++){
+//				arr2D[row][col] = "(" + row + ", " + col + ")";
+//			}
+//		}
+//		starti = 2;
+//		startj = 2;
+//		treasurei = 4;
+//		treasurej = 3;
+//		startExploring();
+		String[][] practice = new String[10][10]; 
+
+		for(int row = 0;row<practice.length;row++){
+			for(int col = 0;col<practice[0].length;col++){
+				if(row % 2 == 0) practice[row][col] = "-";
+				else if(col % 3 == 0) practice[row][col] = "|";
+				else practice[row][col] = " ";
+			}
+		}
+		printPic(practice);
 //		for(int row = 0; row < practice.length; row++){
 //			//populate with coordinates
+//			
 //			for(int col = 0; col < practice[row].length; col++){
-//				practice[row][practice[row].length-1] = "|";	
 //				if(col%3 == 0) practice[row][col] = "|";
 //				else practice[row][col] = "_";
 //			}
 //		}
-//		printPic(practice);
 		//plantMines(mines);
 		//String[][] field = createField(mines);
 		//printPic(field);
