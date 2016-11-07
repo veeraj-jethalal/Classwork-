@@ -106,4 +106,9 @@ public class CaveRoomPd8 {
 	public void interpretAction(String input) {
 		
 	}
+	
+	public static String toDirection(int dir){
+		String[] string = {"the North", "the East", "the South", "the West"};
+		return string[dir];
+	}
 }
