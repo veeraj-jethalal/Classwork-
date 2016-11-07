@@ -17,7 +17,7 @@ public class CaveRoomPd8 {
 
 	public CaveRoomPd8(String description){
 		this.description = description;
-		setDefaultContents("   ");
+		setDefaultContents(" ");
 		contents = defaultContents;
 			
 		borderingRooms = new CaveRoomPd8[4];
