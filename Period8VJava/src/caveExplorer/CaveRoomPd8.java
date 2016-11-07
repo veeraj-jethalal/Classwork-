@@ -46,7 +46,7 @@ public class CaveRoomPd8 {
 	}
 		
 	public void enter(){
-		contents = " X ";
+		contents = "X";
 	}
 		
 	public void leave(){
