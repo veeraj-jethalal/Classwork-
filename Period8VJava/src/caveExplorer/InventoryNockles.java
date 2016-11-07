@@ -14,7 +14,7 @@ public class InventoryNockles {
 		this.hasMap = hasMap;
 	}
 
-	private void updateMap() {
+	void updateMap() {
 		CaveRoomPd8[][] caves = CaveExplorer.caves;
 		//create the top side
 		map = " ";
@@ -38,10 +38,10 @@ public class InventoryNockles {
 					}
 					else if(textRow == 2){
 						if(cr.getDoor(CaveRoomPd8.SOUTH) != null){
-							str = "|___";
+							str = "|_ _";
 						}
 						else{
-							str ="|_ _";
+							str ="|___";
 						}
 					}
 				map+= str;
