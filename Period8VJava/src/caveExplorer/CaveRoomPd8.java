@@ -105,7 +105,7 @@ public class CaveRoomPd8 {
 
 	public void interpretAction(String input) {
 		while(!isValid(input)){
-			CaveExplorer.print("Please enter w, a, s or d")
+			CaveExplorer.print("Please enter w, a, s or d");
 			input = CaveExplorer.in.nextLine().toLowerCase();
 		}
 		String[] keys = {"w", "d", "s", "a"};
@@ -124,7 +124,7 @@ public class CaveRoomPd8 {
 	public static boolean isValid(String input){
 		String[] keys = {"w", "d", "s", "a"};
 		for(String key : keys){
-			if(input.toLowerCase.equals(key)) return true;
+			if(input.equals(key)) return true;
 		}
 		return false;
 	}

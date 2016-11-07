@@ -6,8 +6,12 @@ public class InventoryNockles {
 	private String map;
 	
 	public InventoryNockles() {
-		hasMap = true;
+		hasMap = false;
 		updateMap();
+	}
+
+	public void setHasMap(boolean hasMap) {
+		this.hasMap = hasMap;
 	}
 
 	private void updateMap() {
@@ -29,11 +33,11 @@ public class InventoryNockles {
 					String str = "|   ";
 					String contents = cr.getContents();
 					
-					if(textRow == 1 && cr.getDoor(caveRoomPd8.WEST) != null){
+					if(textRow == 1 && cr.getDoor(CaveRoomPd8.WEST) != null){
 						str = "  " + contents + " ";
 					}
 					else if(textRow == 2){
-						if(cr.getDoor(CaveRoomPd8.SOUTH != null)){
+						if(cr.getDoor(CaveRoomPd8.SOUTH) != null){
 							str = "|___";
 						}
 						else{
