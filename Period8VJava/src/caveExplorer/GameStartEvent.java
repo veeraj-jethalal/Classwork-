@@ -5,8 +5,9 @@ public class GameStartEvent implements Playable {
 	private static final String[] SEQUENCE_1 = {
 			"A little yellow mouse with brown"
 			+ " stripes and a lightning shaped"
-			+ " tail runs up to you. Hi. I can see that you are not from around"
-			+ " here. Do you like puzzles?"};
+			+ " tail runs up to you." , 
+			"Hi. I can see that you are not from around here.",
+			"Do you like puzzles?"};
 	
 	private static final String[] SEQUENCE_2 = {
 			"You are going to have so much fun " + 
@@ -18,6 +19,7 @@ public class GameStartEvent implements Playable {
 	
 	public void play() {
 		readSequence(SEQUENCE_1);
+		System.out.println("Come on. Tell me you like puzzles! Say yes.");
 		while(CaveExplorer.in.nextLine().toLowerCase().indexOf("yes") < 0){
 			CaveExplorer.print("C'mon! You know you like puzzles! Say yes!");
 		}
