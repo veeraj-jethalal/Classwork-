@@ -19,7 +19,7 @@ public class PokemonClass {
 		this.poisoned = false;
 		hp = 100;
 	}
-	
+	//
 	public void attack(PokemonClass target, Attack attack){
 		if(Math.random() < .9){
 			attack.attack(target);
