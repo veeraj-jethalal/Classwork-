@@ -6,6 +6,10 @@ public class PokemonClass {
 	private String name;
 	private boolean poisoned;
 	
+	public static void main(String[] args){
+		PokemonClass squirtle = new PokemonClass("Squirtle", 26);
+		PokemonClass bulbasaur = new PokemonClass("Bulbasaur", 50);
+	}
 	public PokemonClass(String name2, int level2){
 		name = name2;
 		level = level2;
