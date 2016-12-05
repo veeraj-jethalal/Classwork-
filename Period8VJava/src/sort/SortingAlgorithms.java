@@ -1,13 +1,14 @@
 package sort;
 import java.util.Arrays;
 
-public class SelectionSort {
+public class SortingAlgorithms {
 
 	public static void main(String[] args) {
 		int[] arrayToSort={133,0,-5,31,12,12,2};
-		System.out.println("- - - SELECTION SORT - - -");
-		System.out.println(Arrays.toString(arrayToSort));
-		selectionSort(copy(arrayToSort));
+		//System.out.println("- - - SELECTION SORT - - -");
+		//System.out.println(Arrays.toString(arrayToSort));
+		//selectionSort(copy(arrayToSort));
+		bubbleSort(copy(arrayToSort));
 	}
 	
 	public static int[] copy(int[] arr){
@@ -40,5 +41,18 @@ public class SelectionSort {
 			}
 			swap(arrayToSort, i, minIndex);
 		}
+	}
+	
+	public static void bubbleSort(int[] array){
+	    System.out.println("Bubble sort with "+Arrays.toString(array));
+	    for(int i=0; i < array.length-1; i++){
+	        for(int j=1; j < array.length-i; j++){
+	            if(array[j-1] > array[j]){
+	                swap(array,j-1,j);
+	                System.out.println("becomes "+Arrays.toString(array));
+	            }
+	        }
+	        System.out.println("Ends as "+Arrays.toString(array));
+	    }
 	}
 }
