@@ -1,4 +1,4 @@
-package ChatBot;
+package chatBot;
 
 public class VeerajSchool extends Object implements chatBot{
 

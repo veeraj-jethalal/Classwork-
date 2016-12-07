@@ -1,4 +1,4 @@
-package ChatBot;
+package chatBot;
 
 public class VeerajHello implements chatBot{
 	
