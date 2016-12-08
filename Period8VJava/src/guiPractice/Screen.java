@@ -22,6 +22,7 @@ public class Screen {
 
 	public void update() {
 		//this is where you draw stuff
+		Graphics 2D g = image.
 	}
 	
 	public BufferedImage getImage(){
