@@ -18,7 +18,7 @@ public class GUIApplication extends JFrame {
 		int x = 40;
 		int y = 40;
 		int width = 600;
-		int height = 400;
+		int height = 400; 
 		setBounds(x,y,width,height);
 		initScreen();
 		setVisible(true);

@@ -1,6 +1,8 @@
 package guiPractice;
 
-import java.awt.Graphics;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 public class Screen {
@@ -14,16 +16,19 @@ public class Screen {
 		this.height = height;
 		initImage();
 	}
-
+	
 	private void initImage(){
 		image = new BufferedImage(width, height, 
 				BufferedImage.TYPE_INT_ARGB);
 		update();
 	}
 
-	public void update() {
+	public void update(){
 		//this is where you draw stuff
-		Graphics 2D g = image.
+		Graphics2D g = image.createGraphics();
+		g.setColor(Color.black);
+		g.setFont(new Font("Helvetica" , Font.PLAIN, 50));
+		g.drawString("Hello", 100, 100);
 	}
 	
 	public BufferedImage getImage(){
