@@ -14,5 +14,4 @@ public class MouseFollower extends GUIApplication {
 		coordScreen = new CoordinateScreen(getWidth(), getHeight());
 		setScreen(coordScreen);
 	}
-
 }
