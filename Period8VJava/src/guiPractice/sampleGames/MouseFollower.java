@@ -10,7 +10,7 @@ public class MouseFollower extends GUIApplication {
 		new MouseFollower();
 	}
 	
-	protected void initScreen() {
+	protected void initScreen(){
 		coordScreen = new CoordinateScreen(getWidth(), getHeight());
 		setScreen(coordScreen);
 	}
