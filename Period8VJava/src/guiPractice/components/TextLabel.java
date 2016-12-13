@@ -22,14 +22,17 @@ public class TextLabel extends Component {
 
 	public void setText(String s){
 		this.text = s;
+		update(); //makes sure that the picture matches the data
 	}
 	
 	public void setFont(String font){
 		this.font = font;
+		update();
 	}
 	
 	public void setSize(int size){
 		this.size = size;
+		update();
 	}
 	
 	public String getText() {
@@ -45,6 +48,7 @@ public class TextLabel extends Component {
 	}
 	
 	public void update(Graphics2D g) {
+		g = clear();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, 
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.BLACK);
