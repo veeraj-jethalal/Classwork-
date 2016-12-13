@@ -20,7 +20,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 
 	public void initObjects(ArrayList<Visible> viewObjects2) {
 		label = new TextLabel(40, 45, 760, 40, "Sample Text");
-		area = new TextArea(40, 45, 760, 500, "Sample Paragraph Sample "
+		area = new TextArea(40, 85, 760, 500, "Sample Paragraph Sample "
 				+ "Paragraph Sample Paragraph Sample Paragraph "
 				+ "Sample Paragraph Sample Paragraph Sample Paragraph "
 				+ "Sample Paragraph Sample Paragraph Sample Paragraph "
