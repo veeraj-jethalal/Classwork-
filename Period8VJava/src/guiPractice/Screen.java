@@ -15,8 +15,8 @@ public abstract class Screen {
 	
 	private int width;
 	private int height;
-	protected ArrayList<Visible> viewObjects;
-	protected BufferedImage image;
+	private ArrayList<Visible> viewObjects;
+	private BufferedImage image;
 	
 	public Screen(int width, int height){
 		viewObjects = new ArrayList<Visible>();
@@ -26,7 +26,7 @@ public abstract class Screen {
 		initImage();
 	}
 	
-	public abstract void initObjects(ArrayList<Visible> viewObjects2);
+	public abstract void initObjects(ArrayList<Visible> viewObjects);
 
 	private void initImage(){
 		image = new BufferedImage(width, height, 
@@ -41,6 +41,7 @@ public abstract class Screen {
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.white);
 		g.fillRect(0, 0, image.getWidth(), image.getHeight());
+		g.setColor(Color.black);
 		//draw all visible components
 		for(Visible v: viewObjects){
 			g.drawImage(v.getImage(), v.getX(), v.getY(), null);

@@ -12,7 +12,7 @@ public class TextLabel extends Component {
 	private String font;
 	private int size;
 	
-	public TextLabel(int x, int y, int h, int w, String text) {
+	public TextLabel(int x, int y, int w, int h, String text) {
 		super(x, y, h, w);
 		this.text = text;
 		font = "Helvetica";
@@ -54,6 +54,7 @@ public class TextLabel extends Component {
 		g.setColor(Color.black);
 		if(text != null){
 			g.setFont(new Font(font, Font.PLAIN, size));
+//			System.out.println(getHeight());
 			g.drawString(text, 4, getHeight()-5);
 		}
 	}
