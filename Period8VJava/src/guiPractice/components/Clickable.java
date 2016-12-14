@@ -1,9 +1,7 @@
 package guiPractice.components;
 
 public interface Clickable {
-	public static boolean isHovered(int x, int y){
-		return false;
-	}
+	public boolean isHovered(int x, int y);
 	
 	public void act();
 }
