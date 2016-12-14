@@ -39,6 +39,6 @@ public class Button extends TextLabel implements Clickable{
 	}
 	
 	public void act(){
-		Action.act();
+		action.act();
 	}
 }
