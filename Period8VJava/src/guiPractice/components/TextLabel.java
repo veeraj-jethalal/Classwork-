@@ -54,7 +54,6 @@ public class TextLabel extends Component {
 		g.setColor(Color.black);
 		if(text != null){
 			g.setFont(new Font(font, Font.PLAIN, size));
-//			System.out.println(getHeight());
 			g.drawString(text, 4, getHeight()-5);
 		}
 	}

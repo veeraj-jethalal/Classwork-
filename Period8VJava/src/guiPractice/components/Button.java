@@ -15,19 +15,20 @@ public class Button extends TextLabel implements Clickable{
 		super(x, y, h, w, text);
 		this.color = color;
 		this.action = action;
+		update();
 	}
 	
 	public void update(Graphics2D g){
-		g = clear();
+		//g = clear();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, 
 				RenderingHints.VALUE_ANTIALIAS_ON);
-		g.setColor(Color.black);
+		g.setColor(Color.red);
+		g.drawRoundRect(getX(), getY(), getWidth(), getHeight(), 30, 30);
+		g.fillRoundRect(getX(), getY(), getWidth(), getHeight(), 30, 30);
 		if(getText() != null){
 			g.setFont(new Font(getFont(), Font.PLAIN, getSize()));
 			g.drawString(getText(), 4, getHeight()-5);
 		}
-		g.drawRoundRect(getX(), getY(), getWidth(), getHeight(), 30, 30);
-		g.fillRoundRect(getX(), getY(), getWidth(), getHeight(), 30, 30);
 	}
 	
 	public boolean isHovered(int x, int y){
