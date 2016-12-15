@@ -1,4 +1,4 @@
-	package guiPractice.sampleGames;
+package guiPractice.sampleGames;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -25,8 +25,8 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		label = new TextLabel(40, 45, 760, 40, "Sample Text");
 		area = new TextArea(40, 85, 760, 500, "this area works");
-		button = new Button(40, 100, 100, 100, "Button", 
-				new Color(0, 76, 153), new Action(){
+		button = new Button(40, 200, 125, 75, "Button", 
+				new Color(55, 168, 55), new Action(){
 			public void act(){
 				
 			}
@@ -43,7 +43,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 
 	@Override
 	public void mouseMoved(MouseEvent m) {
-		label.setText("Mouse at" + m.getX() + ", " + m.getY());
+		label.setText("Mouse at " + m.getX() + ", " + m.getY());
 	}
 	
 	public MouseMotionListener getMouseMotionListener(){

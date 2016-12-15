@@ -2,6 +2,7 @@ package guiPractice.components;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
@@ -18,24 +19,43 @@ public class Button extends TextLabel implements Clickable{
 		update();
 	}
 	
+	public Color getColor(){
+		return color;
+	}
+	
+	public void setColor(Color c){
+		color = c;
+		update();
+	}
+	
 	public void update(Graphics2D g){
-		//g = clear();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, 
 				RenderingHints.VALUE_ANTIALIAS_ON);
-		g.setColor(Color.red);
-		g.drawRoundRect(getX(), getY(), getWidth(), getHeight(), 30, 30);
-		g.fillRoundRect(getX(), getY(), getWidth(), getHeight(), 30, 30);
-		if(getText() != null){
-			g.setFont(new Font(getFont(), Font.PLAIN, getSize()));
-			g.drawString(getText(), 4, getHeight()-5);
+		g.setColor(color);
+		g.fillRoundRect(0, 0, getWidth(), getHeight(), 35, 25);
+		g.setColor(Color.black);
+		g.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 35, 25);
+		g.setFont(new Font(getFont(),Font.PLAIN,getSize()));
+		FontMetrics fm = g.getFontMetrics();
+		
+		if(getText()!= null){
+			g.setColor(Color.white);
+			String t = getText();
+			//just in case text is too wide, cut off
+			int cutoff = t.length();
+			while(cutoff > 0 && fm.stringWidth(t) > getWidth()){
+				cutoff --;
+				t = t.substring(0,cutoff); 
+			}
+			g.drawString(t, (getWidth()-fm.stringWidth(t))/2, (getHeight()+fm.getHeight()-fm.getDescent())/2);
 		}
 	}
 	
 	public boolean isHovered(int x, int y){
-		if(x >= getX() && x<= (getX() + getWidth()) 
-				&& y>=getY() && y <= (getY() + getHeight())){
+		if(x > getX() && x< (getX() + getWidth()) 
+				&& y>getY() && y < (getY() + getHeight())){
 					return true;
-				}
+		}
 		else return false;
 	}
 	
