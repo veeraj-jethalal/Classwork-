@@ -5,8 +5,10 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class Button extends TextLabel implements Clickable{
+public class Button extends TextLabel implements Clickable, MouseListener{
 
 	private Color color;
 	private Action action;
@@ -61,5 +63,40 @@ public class Button extends TextLabel implements Clickable{
 	
 	public void act(){
 		action.act();
+	}
+	
+	public MouseListener getMouseListener(){
+		return this;
+	}
+	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if(Button.isHovered(e.getX(), e.getY())){
+			Button.act();
+		}
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }

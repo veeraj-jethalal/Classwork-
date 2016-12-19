@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import guiPractice.Screen;
 import guiPractice.components.Action;
 import guiPractice.components.Button;
+import guiPractice.components.Graphic;
 import guiPractice.components.TextArea;
 import guiPractice.components.TextLabel;
 import guiPractice.components.Visible;
@@ -15,25 +16,28 @@ import guiPractice.components.Visible;
 public class CoordinateScreen extends Screen implements MouseMotionListener{
 
 	private TextLabel label;
-	private TextArea area;
+	private TextArea paragraph;
 	private Button button;
+	private Graphic picture;
 	
 	public CoordinateScreen(int width, int height){
 		super(width, height);
 	}
 
 	public void initObjects(ArrayList<Visible> viewObjects) {
+		picture = new Graphic(50,50,.5,"resources/sampleImages/Princess.png");
 		label = new TextLabel(40, 45, 760, 40, "Sample Text");
-		area = new TextArea(40, 85, 760, 500, "this area works");
+		paragraph = new TextArea(40, 85, 760, 500, "this area works");
 		button = new Button(40, 200, 125, 75, "Button", 
 				new Color(55, 168, 55), new Action(){
 			public void act(){
-				
+				MouseFollower.game.setScreen(MouseFollower.myScreen);
 			}
 		});
 		viewObjects.add(label);
-		viewObjects.add(area);
+		viewObjects.add(paragraph);
 		viewObjects.add(button);
+		viewObjects.add(picture);
 	}
 
 	@Override
