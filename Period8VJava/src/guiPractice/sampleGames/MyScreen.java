@@ -18,6 +18,7 @@ public class MyScreen extends Screen {
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		label = new TextLabel(40, 45, 760, 40, "Sample Text");
+		viewObjects.add(label);
 	}
 
 }

@@ -7,7 +7,7 @@ public class MouseFollower extends GUIApplication {
 	public static MouseFollower game;
 	public static MyScreen myScreen;
 	
-	private CoordinateScreen coordScreen;
+	public static CoordinateScreen coordScreen;
 	
 	public static void main(String[] args){
 		game = new MouseFollower();
