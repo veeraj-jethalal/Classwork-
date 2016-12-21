@@ -5,13 +5,14 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
 
-public class Graphic implements Visible {
+public class Graphic implements Visible{
 
 	//FIELDS
 	private int x;
 	private int y;
 	private BufferedImage image;
 	private boolean loadedImages;
+	private Action action;
 	
 	public Graphic(int x, int y, String imageLocation){
 		this.x = x;
@@ -89,28 +90,36 @@ public class Graphic implements Visible {
 		return image;
 	}
 
+	public void setX(int x){
+		this.x = x;
+	}
+	
+	public void setY(int y){
+		this.y = y;
+	}
+	
 	@Override
 	public int getX() {
 		// TODO Auto-generated method stub
-		return 0;
+		return x;
 	}
 
 	@Override
 	public int getY() {
 		// TODO Auto-generated method stub
-		return 0;
+		return y;
 	}
 
 	@Override
 	public int getWidth() {
 		// TODO Auto-generated method stub
-		return 0;
+		return image.getWidth();
 	}
 
 	@Override
 	public int getHeight() {
 		// TODO Auto-generated method stub
-		return 0;
+		return image.getHeight();
 	}
 
 	@Override
@@ -124,5 +133,4 @@ public class Graphic implements Visible {
 		// TODO Auto-generated method stub
 
 	}
-
 }
