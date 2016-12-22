@@ -18,16 +18,22 @@ public abstract class ClickableScreen extends Screen implements MouseListener {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		for(int i = 0; i < clickables.size(); i++){
-			if(isHovered(clickables.get(i))){
-				clickables.get(i).act();
+	public void mouseClicked(MouseEvent m) {
+		for(Clickable c: clickables){
+			if(c.isHovered(m.getX(),  m.getY())){
+				c.act();
 				break;
 			}
 		}
 	}
 
+	public void addObject(Visible v){
+		super.addObject(v);
+		if(v instanceof Clickable){
+			clickables.add((Clickable)v);
+		}
+	}
+	
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -68,5 +74,9 @@ public abstract class ClickableScreen extends Screen implements MouseListener {
 	public MouseListener getMouseListener(){
 		return this;
 	}
-
+	
+	public void remove(Visible v){
+		super.remove(v);
+		clickables.remove(v);
+	}
 }
