@@ -80,7 +80,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 		double probability = .2+.1*(30.0-timeLeft)/30;
 		if(Math.random() < probability){
 			final MoleInterface mole = getAMole();
-			mole.setAppearanceTime((int)(500+Math.random()*2000));
+			mole.setAppearanceTime((int)(5+Math.random()*2000));
 			mole.setAction(new Action(){
 				public void act(){
 					player.increaseScore(1);
