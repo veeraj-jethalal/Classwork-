@@ -1,7 +1,9 @@
 package simon;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
+import guiPractice.components.Action;
 import guiPractice.components.Button;
 import guiPractice.components.TextLabel;
 import guiPractice.components.Visible;
@@ -46,7 +48,11 @@ public class SimonScreenVeeraj extends ClickableScreen implements Runnable {
 	}
 
 	private MoveInterfaceVeeraj randomMove() {
-		Button b; 
+		ButtonInterfaceVeeraj b;
+		int random = (int)(Math.random()*btnint.length);
+		while(random == lastSelectedButton){
+			random = (int)(Math.random()*btnint.length);
+		}
 		return getMove(b);
 	}
 
@@ -59,8 +65,33 @@ public class SimonScreenVeeraj extends ClickableScreen implements Runnable {
 	}
 
 	private void addButtons() {
-		// TODO Auto-generated method stub
-		
+		int numberOfButtons = 6;
+		Color[] colors = {Color.red, Color.green, Color.blue, Color.yellow, Color.pink, Color.orange};
+		int initialX = 100;
+		int initialY = 200;
+		for(int i = 0; i < numberOfButtons; i++){
+			final ButtonInterfaceVeeraj b = getAButton();
+			b.setColor(colors[i]);
+			b.setX(initialX + 50);
+			b.setY(initialY + 50);
+			initialX+=50;
+			initialY+=50;
+			b.setAction(new Action(){
+				public void act(){
+					if(acceptingInput){
+						Thread blink = new Thread(new Runnable(){
+							public void run(){
+								b.highlight();
+								Thread turnedOn = new Thread(turnedOn);
+								Thread.sleep(800);
+								b.dim();
+							}
+						});
+						blink.start();
+					}
+				}
+			});
+		}
 	}
 
 }
