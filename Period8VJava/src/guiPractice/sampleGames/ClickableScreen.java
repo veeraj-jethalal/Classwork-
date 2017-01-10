@@ -1,9 +1,12 @@
 package guiPractice.sampleGames;
 
-import java.awt.List;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import guiPractice.Screen;
 import guiPractice.components.Clickable;
@@ -15,7 +18,6 @@ public abstract class ClickableScreen extends Screen implements MouseListener {
 	
 	public ClickableScreen(int width, int height) {
 		super(width, height);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void mouseClicked(MouseEvent m) {
@@ -33,39 +35,15 @@ public abstract class ClickableScreen extends Screen implements MouseListener {
 		if(v instanceof Clickable){
 			clickables.add((Clickable)v);
 		}
-	}
-	
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
+	}	
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		initAllObjects(viewObjects);
 		clickables = new ArrayList<Clickable>();
-		for(int i = 0; i < viewObjects.size(); i++){
-			if(viewObjects.get(i) instanceof Clickable){
-				clickables.add((Clickable) viewObjects.get(i));
+		for(Visible v: viewObjects){
+			if(v instanceof Clickable){
+				clickables.add((Clickable)v);
 			}
 		}
 	}
