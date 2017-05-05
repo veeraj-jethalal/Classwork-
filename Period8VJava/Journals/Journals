@@ -17,3 +17,12 @@ project.
 
 Goal: Today, my group will need to redefine the project specifications
 because Mr. Nockles said that the current project will be too easy.
+
+Accomplished: We decided that we will work solely on Java instead of using
+multiple languages. We will add voice interface to the chatroom to ad
+complexity and implement it on Vaadin as well. For the weekend, we
+all are going to watch a set of videos on YouTube
+(https://www.youtube.com/watch?v=pr02nyPqLBU)  to understand how the
+chatroom works. On Monday, we will divide the roles after having a 
+better understanding. We will also need to research how create a server
+host and how to have voice in Java.
