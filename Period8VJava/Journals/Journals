@@ -59,3 +59,16 @@ and allowing the user the customize the color, size and type of their message.
 I will also try to implement small things, such as allowing the user to
 see when the other user is typing or when the user saw the message, like on
 Facebook.
+
+       5/15/17
+       
+Goal: Today, I will look for ways in which I can implement "user is typing" 
+into the program.
+
+Accomplished: I found a way that I can do this using key listeners, but
+I am not quite sure as to where I am supposed to put the code. The 
+implementation looks pretty simple on JavaScript, but I don't know
+how to translate that into Java. Also, I made the text areas uneditable 
+because before, the user could just erase the messages. Now that the 
+basic GUI is complete and working, I will find ways to make it aesthetically 
+pleasing.
