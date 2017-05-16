@@ -72,3 +72,13 @@ how to translate that into Java. Also, I made the text areas uneditable
 because before, the user could just erase the messages. Now that the 
 basic GUI is complete and working, I will find ways to make it aesthetically 
 pleasing.
+
+        5/16/17
+        
+Goal: After talking to my group, I changed my role once again to designing
+a login system where the user is required to enter a username and password,
+which gets saved, to maybe a database, but I will decide that later.
+
+Accomplished: I created the beginning of the login class. I created the
+initial window with text areas and all the necessary fields. I'll work
+towards it completion in the coming days until it is finished.
