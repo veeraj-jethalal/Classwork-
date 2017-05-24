@@ -91,3 +91,14 @@ towards it completion in the coming days until it is finished.
  Accomplished: I was unable to reach my goal, even after I looked online
 and talking to my other group members. I'll try to find a solution at home
 tonight and if I can't, then I will ask Mr. Nockles in class tomorrow.
+
+        5/24/17
+        
+ Goal: I have the same goal from yesterday.
+ 
+ Accomplished: I still could not solve the problem. I looked through
+ the client class and found the place where the problem occurs,
+ but I can't find the issue. The problem is when I click login and
+ the username/password are correct, the client will run but it will
+ only be a blank window. However, if I run the client without the
+ login GUI, then it works fine. I will ask Mr. Nockles tomorrow.
