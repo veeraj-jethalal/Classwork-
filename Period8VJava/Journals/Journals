@@ -102,3 +102,14 @@ tonight and if I can't, then I will ask Mr. Nockles in class tomorrow.
  the username/password are correct, the client will run but it will
  only be a blank window. However, if I run the client without the
  login GUI, then it works fine. I will ask Mr. Nockles tomorrow.
+ 
+        5/25/17
+        
+Goal: I am going to ask Mr. Nockles about fixing my error.
+
+Accomplished: Mr. Nockles helped me with fixing the issue. The problem
+was that the code was running in an infinite loop, which it never
+exited and the solution was to create a separate thread in the login
+class. I am pretty much done with the login code, for tomorrow I will
+find ways to make it more efficient and help my team members with 
+their roles and any problems that they may have.
