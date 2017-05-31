@@ -122,3 +122,13 @@ theirs.
 Accomplished: Today, I helped Gabriel with his problem. He was unable
 to import fonts into Java, so I helped him find a solution to that and
 although it still doesn't work, he made some progress.
+
+       5/31/17
+       
+Goal: I will help Gabriel finish his emoji implementation.
+
+Accomplished: We got the chat window to display an empty box
+in place of the emoji, which means that the only thing left to do
+is to use a font that is compatible with emojis. There is also one
+small bug that we need to fix. I also started the PowerPoint for
+the symposium and finished the basic layout.
