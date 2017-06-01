@@ -132,3 +132,11 @@ in place of the emoji, which means that the only thing left to do
 is to use a font that is compatible with emojis. There is also one
 small bug that we need to fix. I also started the PowerPoint for
 the symposium and finished the basic layout.
+
+      6/1/17
+      
+Goal: We will try to finish Gabriel's issue today.
+
+Accomplished: We decided to set aside the issue for now and worked on
+creating a method so that the user can directly pick an emoji
+from a list of different emojis.
