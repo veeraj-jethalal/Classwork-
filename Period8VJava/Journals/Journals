@@ -140,3 +140,12 @@ Goal: We will try to finish Gabriel's issue today.
 Accomplished: We decided to set aside the issue for now and worked on
 creating a method so that the user can directly pick an emoji
 from a list of different emojis.//
+
+      6/5/17
+      
+Goal: I will try to help my team members solve their issues
+
+Accomplished: I helped Gabriel solve his issue; he was unable to find a way
+to create a for loop that checked the message for an emoji string to convert
+into an actual emoji and turn it into the actual emoji face. Also, Victor is
+having trouble with his code, so I will try to help him as well.
