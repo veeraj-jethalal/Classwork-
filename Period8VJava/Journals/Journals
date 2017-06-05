@@ -141,11 +141,21 @@ Accomplished: We decided to set aside the issue for now and worked on
 creating a method so that the user can directly pick an emoji
 from a list of different emojis.//
 
+      6/2/17
+      
+Goal: I will merge the code from my partners' branches and resolve the
+merge conflicts.
+
+Accomplished: I finished merging everyone's code onto my branch and 
+resolved the conflicts. However, not everyone is completely finished 
+yet, so the program itself is not fully functional.
+
       6/5/17
       
 Goal: I will try to help my team members solve their issues
 
-Accomplished: I helped Gabriel solve his issue; he was unable to find a way
+Accomplished: I helped Gabriel; he was unable to find a way
 to create a for loop that checked the message for an emoji string to convert
 into an actual emoji and turn it into the actual emoji face. Also, Victor is
 having trouble with his code, so I will try to help him as well.
+
